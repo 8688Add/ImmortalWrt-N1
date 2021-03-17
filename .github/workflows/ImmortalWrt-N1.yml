@@ -1,12 +1,12 @@
-name: armv8开发版
+name: ImmortalWrt-N1
 
 on:
   repository_dispatch:
-    types: [karmv8,sshkarmv8]
+    types: [ImmortalWrt-N1,sshImmortalWrt-N1]
   workflow_dispatch:
     inputs:
       ssh:
-        description: 'karmv8'
+        description: 'ImmortalWrt-N1'
         required: false
         default: 'false'
   schedule:
@@ -23,7 +23,7 @@ env:
   UPLOAD_WETRANSFER: false
   UPLOAD_COWTRANSFER: false
   TZ: Asia/Shanghai
-  FILE_NAME: armv8开发版
+  FILE_NAME: ImmortalWrt-N1
 
 jobs:
   build:
@@ -120,14 +120,14 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true' && !cancelled()
       with:
-        name: karmv8
+        name: ImmortalWrt-N1
         path: openwrt/bin/targets/*/*/bin.tar.gz
 
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
       if: env.UPLOAD_FIRMWARE == 'true' && steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: karmv8
+        name: ImmortalWrt-N1
         path: ${{ env.FIRMWARE }}
 
     - name: Create release
