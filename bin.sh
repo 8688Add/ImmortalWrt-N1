@@ -11,30 +11,30 @@
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings
 
 #添加额外软件包
-rm -rf package/lean/luci-app-dockerman
-git clone https://github.com/lisaac/luci-app-dockerman.git package/openwrt-packages/luci-app-dockerman
+#rm -rf package/lean/luci-app-dockerman
+#git clone https://github.com/lisaac/luci-app-dockerman.git package/openwrt-packages/luci-app-dockerman
 #rm -rf package/lean/xray
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray package/lean/xray
 svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le package/smartdns-le
 git clone https://github.com/garypang13/luci-app-bypass.git package/luci-app-bypass
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/brook
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/chinadns-ng
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/trojan-go
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/trojan-plus
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks package/ssocks
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/luci-app-passwall
-git clone https://github.com/Lienol/openwrt-package.git package/openwrt-package
+#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/brook
+#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/chinadns-ng
+#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/trojan-go
+#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/trojan-plus
+#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks package/ssocks
+#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/luci-app-passwall
+#git clone https://github.com/Lienol/openwrt-package.git package/openwrt-package
 #git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
-rm -rf package/lean/luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
+#rm -rf package/lean/luci-theme-argon
+#git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
+#git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 #svn co https://github.com/siropboy/mypackages/trunk/luci-app-autopoweroff package/openwrt-packages/luci-app-autopoweroff
 #svn co https://github.com/siropboy/mypackages/trunk/luci-app-control-timewol package/openwrt-packages/luci-app-control-timewol
 #rm -rf package/lean/v2ray
 #svn co https://github.com/8688Add/Lienol-openwrt-package/trunk/package/v2ray package/lean/v2ray
-git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
-git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
-git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
+#git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
+#git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
+#git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
 #git clone https://github.com/8688Add/luci-app-vssr-plus.git package/luci-app-vssr-plus
 #git clone https://github.com/bin20088/luci-theme-argon-mc.git package/openwrt-packages/luci-theme-argon-mc
 #git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/openwrt-packages/luci-theme-opentomcat
@@ -43,14 +43,14 @@ git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-a
 #git clone https://github.com/bin20088/luci-app-koolproxy.git package/openwrt-packages/luci-app-koolproxy
 #git clone https://github.com/bin20088/luci-app-koolddns.git package/openwrt-packages/luci-app-koolddns
 git clone https://github.com/tuanqing/install-program package/install-program
-git clone https://github.com/vernesong/OpenClash.git package/luci-app-openclash
-svn co https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom/trunk/luci-theme-infinityfreedom package/openwrt-packages/luci-theme-infinityfreedom
+#git clone https://github.com/vernesong/OpenClash.git package/luci-app-openclash
+#svn co https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom/trunk/luci-theme-infinityfreedom package/openwrt-packages/luci-theme-infinityfreedom
 #svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-gost package/lean/luci-app-gost
 #svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gost package/lean/gost
 #svn co https://github.com/8688Add/sirpdboy-package/trunk/luci-app-ddnsto package/luci-app-ddnsto
 
-sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-flowoffload/po/zh-cn/flowoffload.po
-sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
+#sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-flowoffload/po/zh-cn/flowoffload.po
+#sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
 #sed -i 's/"解锁网易云灰色歌曲"/"网易云音乐"/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
 
 #赋予koolddns权限
@@ -58,8 +58,8 @@ sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-sfe/p
 #chmod 0755 package/openwrt-packages/luci-app-koolddns/root/usr/share/koolddns/aliddns
 
 #修改bypass的makefile
-find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
-find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
+#find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
+#find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
