@@ -65,13 +65,65 @@ jobs:
         allowUpdates: true
         omitBodyDuringUpdate: true
         omitNameDuringUpdate: true
-        tag: ImmortalWrt-N1
+        tag: ImmortalWrt-N1+0版
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         artifacts: /opt/openwrt/tmp/*.img.bz2
 
+  kbuild: #ImmortalWrt-N1+版
+    runs-on: ubuntu-18.04
+    steps:
+    
+    - name: Checkout
+      uses: actions/checkout@main
+    
+    - name: Build firmware #打包
+      id: build
+      run: |
+        cd /opt
+        sudo wget https://github.com/8688Add/N1-Actions-Dabao/releases/download/Armbian-55/img+.tar
+        sudo tar xvf *.tar
+        sudo xz -d *.img.xz
+        sudo tar zxvf *.tar.gz
+        sudo mkdir imgs
+        sudo mv *.img imgs
+        cd /opt/openwrt
+        sudo wget https://github.com/8688Add/N1-Actions-Dabao/releases/download/armv8开发版/openwrt-armvirt-64-default-rootfs.tar.gz
+        sudo ./mk_s905x3_multi.sh
+        sudo ./mk_h6_vplus.sh
+        sudo ./mk_s905x2_x96max.sh
+        sudo ./mk_s905d_n1.sh
+        sudo ./mk_s912_zyxq.sh
+        sudo ./mk_s922x_gtking.sh
+        sudo ./mk_rk3328_beikeyun.sh
+        sudo ./mk_rk3328_l1pro.sh
+        sudo ./OLD_mk_n1_opimg.sh
+        sudo ./OLD_n1-to-vplus.sh
+        cd /opt/openwrt/tmp
+        sudo bzip2 *.img
+        echo "::set-output name=status::success"
+    
+    - name: Upload bin directory #上传artifact
+      uses: actions/upload-artifact@main
+      if: steps.build.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true' && !cancelled()
+      with:
+        name: k+
+        path: /opt/openwrt/tmp/*.img.bz2
+    
+    - name: Create release #发布
+      uses: ncipollo/release-action@v1
+      if: env.UPLOAD_RELEASE == 'true' && steps.build.outputs.status == 'success' && !cancelled()
+      with:
+        allowUpdates: true
+        omitBodyDuringUpdate: true
+        omitNameDuringUpdate: true
+        tag: ImmortalWrt-N1+版
+        commit: master
+        token: ${{ secrets.RELEASES_TOKEN }}
+        artifacts: /opt/openwrt/tmp/*.img.bz2 
+  
   over:
-    needs: [kbuild0, kbuild, wbuild0, wbuild]
+    needs: [kbuild0, kbuild]
     runs-on: ubuntu-18.04
     steps:
     #- name: WeChat notification #微信推送
