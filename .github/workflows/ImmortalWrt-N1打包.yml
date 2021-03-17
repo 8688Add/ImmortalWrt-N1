@@ -21,8 +21,10 @@ jobs:
   kbuild0: #ImmortalWrt-N1+0版
     runs-on: ubuntu-18.04
     steps:    
+    
     - name: Checkout
       uses: actions/checkout@main
+    
     - name: Build firmware #打包
       id: build
       run: |
@@ -48,12 +50,14 @@ jobs:
         cd /opt/openwrt/tmp
         sudo bzip2 *.img
         echo "::set-output name=status::success"
+    
     - name: Upload bin directory #上传artifact
       uses: actions/upload-artifact@main
       if: steps.build.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true' && !cancelled()
       with:
         name: k+0
         path: /opt/openwrt/tmp/*.img.bz2
+    
     - name: Create release #发布
       uses: ncipollo/release-action@v1
       if: env.UPLOAD_RELEASE == 'true' && steps.build.outputs.status == 'success' && !cancelled()
