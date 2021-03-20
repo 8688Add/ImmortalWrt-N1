@@ -61,7 +61,7 @@ jobs:
         allowUpdates: true
         omitBodyDuringUpdate: true
         omitNameDuringUpdate: true
-        tag: armv8开发版
+        tag: ImmortalWrt-N1
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         artifacts: /opt/openwrt/tmp/*.img.bz2
@@ -110,7 +110,7 @@ jobs:
         allowUpdates: true
         omitBodyDuringUpdate: true
         omitNameDuringUpdate: true
-        tag: armv8开发版
+        tag: ImmortalWrt-N1
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         artifacts: /opt/openwrt/tmp/*.img.bz2
