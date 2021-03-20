@@ -1,4 +1,4 @@
-name: ImmortalWrt-N1
+name: ImmortalWrt-Test
 
 on:
   repository_dispatch:
