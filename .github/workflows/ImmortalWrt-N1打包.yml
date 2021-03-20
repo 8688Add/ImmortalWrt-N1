@@ -1,4 +1,4 @@
-name: armv8打包
+name: ImmortalWrt-N1打包
 
 on:
   repository_dispatch:
