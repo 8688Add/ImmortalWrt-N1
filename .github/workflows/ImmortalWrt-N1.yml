@@ -134,7 +134,7 @@ jobs:
       uses: ncipollo/release-action@v1
       if: env.UPLOAD_RELEASE == 'true' && steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: ${{ env.DATE }} 🚀 armv8开发版 | 自动编译
+        name: ${{ env.DATE }} 🚀 ImmortalWrt-N1 | 自动编译
         allowUpdates: true
         tag: ImmortalWrt-N1
         commit: master
