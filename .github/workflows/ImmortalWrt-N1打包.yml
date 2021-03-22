@@ -62,7 +62,7 @@ jobs:
         omitBodyDuringUpdate: true
         omitNameDuringUpdate: true
         tag: ImmortalWrt-N1
-        commit: master
+        commit: main
         token: ${{ secrets.RELEASES_TOKEN }}
         artifacts: /opt/openwrt/tmp/*.img.bz2
 
@@ -111,7 +111,7 @@ jobs:
         omitBodyDuringUpdate: true
         omitNameDuringUpdate: true
         tag: ImmortalWrt-N1
-        commit: master
+        commit: main
         token: ${{ secrets.RELEASES_TOKEN }}
         artifacts: /opt/openwrt/tmp/*.img.bz2
 
