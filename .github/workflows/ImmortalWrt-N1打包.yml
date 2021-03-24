@@ -18,7 +18,7 @@ env:
 
 jobs:
 
-  kbuild0: #开发+0版
+  build0: #开发+0版
     runs-on: ubuntu-18.04
     steps:    
     - name: Checkout
@@ -67,7 +67,7 @@ jobs:
         artifacts: /opt/openwrt/tmp/*.img.bz2
 
 
-  kbuild: #开发+版
+  build: #开发+版
     runs-on: ubuntu-18.04
     steps:
     - name: Checkout
