@@ -19,7 +19,7 @@ env:
   DIY_SH: bin.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: false
-  UPLOAD_RELEASE: false
+  UPLOAD_RELEASE: true
   UPLOAD_WETRANSFER: false
   UPLOAD_COWTRANSFER: false
   TZ: Asia/Shanghai
