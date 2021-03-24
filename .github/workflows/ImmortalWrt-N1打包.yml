@@ -14,7 +14,7 @@ on:
 
 env:
   UPLOAD_BIN_DIR: true
-  UPLOAD_RELEASE: false
+  UPLOAD_RELEASE: true
 
 jobs:
 
