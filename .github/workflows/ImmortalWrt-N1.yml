@@ -137,7 +137,7 @@ jobs:
         name: ${{ env.DATE }} 🚀 ImmortalWrt-N1 | 自动编译
         allowUpdates: true
         tag: ImmortalWrt-N1
-        commit: master
+        commit: main
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
           ${{ env.useVersionInfo }}
